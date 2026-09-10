@@ -1,0 +1,38 @@
+.bottom-nav {
+  display: none;
+}
+
+@media (max-width: 920px) {
+  .bottom-nav {
+    display: grid;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    grid-template-columns: repeat(5, 1fr);
+    background: rgba(10, 16, 32, 0.97);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 8px 8px calc(8px + env(safe-area-inset-bottom));
+    backdrop-filter: blur(16px);
+  }
+
+  .bottom-nav a {
+    padding: 5px 2px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.56);
+    font-size: 0.65rem;
+  }
+
+  .bottom-nav b {
+    display: block;
+    margin-bottom: 2px;
+    font-family: Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  .bottom-nav a.active {
+    color: var(--color-gold-soft);
+  }
+}

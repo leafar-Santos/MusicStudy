@@ -1,0 +1,59 @@
+.topbar {
+  height: 72px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6vw;
+  background: var(--color-ink);
+  color: var(--color-white);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+}
+
+.topbar__brand-mark {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 50%;
+  color: var(--color-gold-soft);
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+}
+
+.topbar__nav {
+  display: flex;
+  gap: 24px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.9rem;
+}
+
+.topbar__nav a {
+  transition: color 0.2s ease;
+}
+
+.topbar__nav a:hover,
+.topbar__nav a.active {
+  color: var(--color-gold-soft);
+}
+
+@media (max-width: 920px) {
+  .topbar {
+    height: 60px;
+    padding: 0 16px;
+  }
+
+  .topbar__nav {
+    display: none;
+  }
+}

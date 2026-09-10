@@ -1,0 +1,843 @@
+.metronome-page {
+  width: min(var(--content-width), 94vw);
+  margin: 0 auto;
+  padding: 52px 0 110px;
+}
+
+/* HEADER */
+
+.metronome-page__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 36px;
+}
+
+.metronome-page__eyebrow {
+  display: block;
+  margin-bottom: 12px;
+
+  color: var(--color-gold);
+
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.metronome-page__header h1 {
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 500;
+
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.metronome-page__header p {
+  max-width: 630px;
+
+  margin-top: 15px;
+
+  color: var(--color-muted);
+
+  line-height: 1.6;
+}
+
+.metronome-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 10px 15px;
+
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+
+  color: var(--color-muted);
+
+  background: var(--color-paper);
+
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.metronome-status span {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #a3a3a3;
+}
+
+.metronome-status.running span {
+  background: #6fd499;
+
+  box-shadow:
+    0 0 0 4px rgba(111, 212, 153, 0.12),
+    0 0 12px rgba(111, 212, 153, 0.65);
+}
+
+/* LAYOUT */
+
+.metronome-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(430px, 0.95fr)
+    minmax(460px, 1.05fr);
+
+  gap: 24px;
+
+  align-items: start;
+}
+
+/* PAINEL PRINCIPAL */
+
+.metronome-main {
+  position: sticky;
+  top: 100px;
+
+  overflow: hidden;
+
+  padding: 34px;
+
+  border-radius: 32px;
+
+  color: white;
+
+  background:
+    radial-gradient(
+      circle at 50% 5%,
+      rgba(215, 173, 98, 0.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #101832,
+      #0a1022
+    );
+
+  box-shadow:
+    0 25px 70px rgba(11, 16, 32, 0.22);
+}
+
+.metronome-main::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.18;
+
+  background:
+    repeating-linear-gradient(
+      180deg,
+      transparent 0,
+      transparent 38px,
+      rgba(255, 255, 255, 0.08) 39px,
+      transparent 40px
+    );
+}
+
+/* DISPLAY */
+
+.metronome-display {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: 100px 1fr 120px;
+
+  align-items: center;
+
+  min-height: 190px;
+}
+
+.metronome-display__signature {
+  color: var(--color-gold-soft);
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: 2.4rem;
+}
+
+.metronome-display__bpm {
+  text-align: center;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: clamp(5rem, 10vw, 8rem);
+
+  font-weight: 500;
+
+  line-height: 0.9;
+}
+
+.metronome-display__bpm span {
+  display: block;
+
+  margin-top: 10px;
+
+  color: var(--color-gold-soft);
+
+  font-family: Inter, sans-serif;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+}
+
+.metronome-display__timer {
+  text-align: right;
+}
+
+.metronome-display__timer span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 0.68rem;
+}
+
+.metronome-display__timer strong {
+  color: white;
+
+  font-size: 1.25rem;
+
+  font-variant-numeric: tabular-nums;
+}
+
+/* BATIDAS */
+
+.beat-visualizer {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 70px;
+
+  margin: 12px 0 8px;
+
+  overflow-x: auto;
+}
+
+.beat-indicator {
+  width: 38px;
+  height: 38px;
+
+  flex: 0 0 auto;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+
+  color: rgba(255, 255, 255, 0.38);
+
+  background: rgba(255, 255, 255, 0.04);
+
+  font-size: 0.72rem;
+
+  transition:
+    0.07s ease,
+    transform 0.07s ease;
+}
+
+.beat-indicator.accent {
+  border-color: rgba(215, 173, 98, 0.6);
+}
+
+.beat-indicator.secondary-accent {
+  border-color: rgba(242, 223, 180, 0.32);
+}
+
+.beat-indicator.active {
+  transform: scale(1.2);
+
+  border-color: var(--color-gold);
+
+  color: #21180d;
+
+  background: var(--color-gold);
+
+  box-shadow:
+    0 0 0 6px rgba(215, 173, 98, 0.1),
+    0 0 22px rgba(215, 173, 98, 0.55);
+}
+
+.subdivision-visualizer {
+  display: flex;
+  justify-content: center;
+
+  gap: 7px;
+
+  height: 14px;
+
+  margin-bottom: 12px;
+}
+
+.subdivision-visualizer span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  transition: 0.08s ease;
+}
+
+.subdivision-visualizer span.active {
+  transform: scale(1.45);
+
+  background: var(--color-gold-soft);
+}
+
+/* BPM */
+
+.tempo-control {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+
+  grid-template-columns:
+    52px
+    42px
+    minmax(120px, 1fr)
+    42px
+    52px;
+
+  gap: 8px;
+
+  align-items: center;
+
+  margin-top: 24px;
+}
+
+.tempo-control button {
+  height: 42px;
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 12px;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  background: rgba(255, 255, 255, 0.06);
+
+  font-weight: 700;
+}
+
+.tempo-control button:hover {
+  color: white;
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.tempo-control input {
+  width: 100%;
+
+  accent-color: var(--color-gold);
+}
+
+/* PLAY */
+
+.metronome-actions {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+
+  margin-top: 34px;
+}
+
+.metronome-play {
+  min-width: 190px;
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+
+  border: 0;
+  border-radius: 999px;
+
+  color: #20170d;
+
+  background: var(--color-gold);
+
+  font-weight: 800;
+
+  box-shadow:
+    0 12px 30px rgba(215, 173, 98, 0.25);
+
+  transition: 0.2s ease;
+}
+
+.metronome-play:hover {
+  transform: translateY(-2px);
+}
+
+.metronome-play.running {
+  color: white;
+
+  background: #a74747;
+
+  box-shadow:
+    0 12px 30px rgba(167, 71, 71, 0.24);
+}
+
+/* SETTINGS */
+
+.metronome-settings {
+  display: grid;
+
+  gap: 14px;
+}
+
+.setting-card {
+  padding: 24px;
+
+  border: 1px solid var(--color-line);
+  border-radius: 24px;
+
+  background: var(--color-paper);
+}
+
+.setting-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  margin-bottom: 20px;
+}
+
+.setting-card__header > div {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+}
+
+.setting-card__header span {
+  display: grid;
+  place-items: center;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  color: var(--color-navy);
+
+  background: var(--color-cream);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.setting-card__header h2 {
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.setting-card__header > strong {
+  color: var(--color-muted);
+
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* COMPASSO */
+
+.signature-sections {
+  display: grid;
+
+  gap: 18px;
+}
+
+.signature-sections label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--color-muted);
+
+  font-size: 0.68rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.option-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 8px;
+}
+
+.option-grid--three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.option-grid button,
+.timer-options button {
+  min-height: 44px;
+
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+
+  color: var(--color-text);
+
+  background: white;
+
+  font-weight: 700;
+
+  transition: 0.18s ease;
+}
+
+.option-grid button:hover,
+.timer-options button:hover {
+  border-color: var(--color-gold);
+}
+
+.option-grid button.selected,
+.timer-options button.selected {
+  border-color: var(--color-navy);
+
+  color: white;
+
+  background: var(--color-navy);
+}
+
+/* SUBDIVISÃO */
+
+.subdivision-options {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 8px;
+}
+
+.subdivision-options button {
+  min-height: 82px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  border: 1px solid var(--color-line);
+  border-radius: 15px;
+
+  background: white;
+}
+
+.subdivision-options button strong {
+  font-family: Georgia, serif;
+
+  font-size: 1.45rem;
+}
+
+.subdivision-options button span {
+  color: var(--color-muted);
+
+  font-size: 0.62rem;
+}
+
+.subdivision-options button.selected {
+  border-color: var(--color-gold);
+
+  color: var(--color-navy);
+
+  background: #f8f0df;
+
+  box-shadow:
+    inset 0 0 0 1px var(--color-gold);
+}
+
+/* SONS */
+
+.sound-options {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 8px;
+}
+
+.sound-options button {
+  min-height: 75px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border: 1px solid var(--color-line);
+  border-radius: 15px;
+
+  background: white;
+}
+
+.sound-options button strong {
+  color: var(--color-navy);
+
+  font-size: 1.4rem;
+}
+
+.sound-options button span {
+  color: var(--color-muted);
+
+  font-size: 0.7rem;
+}
+
+.sound-options button.selected {
+  border-color: var(--color-gold);
+
+  background: #f8f0df;
+}
+
+/* ACENTO */
+
+.accent-toggle {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 14px;
+
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+
+  text-align: left;
+
+  background: white;
+}
+
+.accent-toggle__switch {
+  width: 46px;
+  height: 26px;
+
+  flex: 0 0 auto;
+
+  position: relative;
+
+  border-radius: 999px;
+
+  background: #d4d4d4;
+
+  transition: 0.2s ease;
+}
+
+.accent-toggle__switch i {
+  width: 20px;
+  height: 20px;
+
+  position: absolute;
+  top: 3px;
+  left: 3px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  transition: 0.2s ease;
+}
+
+.accent-toggle.enabled
+  .accent-toggle__switch {
+  background: var(--color-navy);
+}
+
+.accent-toggle.enabled
+  .accent-toggle__switch
+  i {
+  transform: translateX(20px);
+
+  background: var(--color-gold);
+}
+
+.accent-toggle strong,
+.accent-toggle small {
+  display: block;
+}
+
+.accent-toggle small {
+  margin-top: 3px;
+
+  color: var(--color-muted);
+}
+
+/* TIMER */
+
+.timer-options {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 8px;
+}
+
+.timer-help {
+  margin-top: 13px;
+
+  color: var(--color-muted);
+
+  font-size: 0.74rem;
+
+  line-height: 1.5;
+}
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+  .metronome-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .metronome-main {
+    position: relative;
+    top: auto;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 920px) {
+  .metronome-page {
+    width: auto;
+
+    padding:
+      38px
+      16px
+      115px;
+  }
+
+  .metronome-page__header {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .metronome-main {
+    padding: 24px 18px;
+
+    border-radius: 26px;
+  }
+}
+
+@media (max-width: 620px) {
+  .metronome-display {
+    grid-template-columns: 70px 1fr 82px;
+
+    min-height: 160px;
+  }
+
+  .metronome-display__signature {
+    font-size: 1.7rem;
+  }
+
+  .metronome-display__bpm {
+    font-size: 5rem;
+  }
+
+  .metronome-display__timer strong {
+    font-size: 1rem;
+  }
+
+  .beat-visualizer {
+    justify-content: flex-start;
+
+    padding: 10px 3px;
+  }
+
+  .beat-indicator {
+    width: 34px;
+    height: 34px;
+  }
+
+  .tempo-control {
+    grid-template-columns:
+      44px
+      38px
+      1fr
+      38px
+      44px;
+
+    gap: 5px;
+  }
+
+  .tempo-control button {
+    font-size: 0.72rem;
+  }
+
+  .option-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .option-grid--three {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+  .subdivision-options {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .sound-options {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .timer-options {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .setting-card {
+    padding: 19px;
+  }
+
+  .setting-card__header {
+    flex-direction: column;
+
+    gap: 7px;
+  }
+}

@@ -1,0 +1,30 @@
+.tool-card {
+  min-height: 145px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: var(--radius-md);
+  color: white;
+  background: #121a35;
+  transition: transform 0.2s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-3px);
+}
+
+.tool-card__icon {
+  color: var(--color-gold-soft);
+  font-size: 2rem;
+}
+
+.tool-card strong,
+.tool-card small {
+  display: block;
+}
+
+.tool-card small {
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.6);
+}

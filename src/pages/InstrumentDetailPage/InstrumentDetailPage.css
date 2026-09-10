@@ -1,0 +1,123 @@
+.instrument-detail-page {
+  width: min(var(--content-width), 90vw);
+  margin: auto;
+  padding: 42px 0 100px;
+}
+
+.instrument-detail-page__back {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: var(--color-muted);
+}
+
+.instrument-detail-hero {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  align-items: center;
+  gap: 30px;
+  padding: 35px;
+  border-radius: 30px;
+  color: white;
+  background: var(--color-navy);
+}
+
+.instrument-detail-hero__icon {
+  width: 150px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 5rem;
+}
+
+.instrument-detail-hero__family {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.instrument-detail-hero h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  font-weight: 500;
+}
+
+.instrument-detail-hero p {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.instrument-detail-notes {
+  margin-top: 45px;
+}
+
+.instrument-detail-notes__list {
+  display: grid;
+  gap: 10px;
+}
+
+.instrument-note {
+  display: grid;
+  grid-template-columns: 1fr 140px 120px;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  border: 1px solid var(--color-line);
+  border-radius: 18px;
+  background: var(--color-paper);
+}
+
+.instrument-note strong,
+.instrument-note span,
+.instrument-note small {
+  display: block;
+}
+
+.instrument-note span,
+.instrument-note small {
+  color: var(--color-muted);
+}
+
+.instrument-note__frequency {
+  font-weight: 700;
+}
+
+.instrument-note button {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 999px;
+  color: white;
+  background: var(--color-navy);
+  font-weight: 700;
+}
+
+@media (max-width: 920px) {
+  .instrument-detail-page {
+    width: auto;
+    padding: 42px 16px 105px;
+  }
+}
+
+@media (max-width: 620px) {
+  .instrument-detail-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .instrument-detail-hero__icon {
+    margin: auto;
+  }
+
+  .instrument-note {
+    grid-template-columns: 1fr auto;
+  }
+
+  .instrument-note button {
+    grid-column: 1 / -1;
+  }
+}
