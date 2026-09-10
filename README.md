@@ -1,64 +1,35 @@
-# MusicStudy
+# MusicStudy - React (Create React App)
 
-Projeto React + Vite refatorado com arquitetura por componente.
+Projeto convertido para React com `react-scripts`, sem Vite.
 
-## Requisitos atendidos
+## Instalação limpa no Windows
 
-1. Cada componente possui sua própria pasta.
-2. Cada componente possui seu próprio arquivo CSS.
-3. O CSS global fica isolado em `src/styles/global.css`.
-4. O menu superior possui o item **Home**.
-5. A navegação mobile também possui **Home**.
+Se você já executou versões anteriores do projeto, apague as dependências antigas antes de instalar:
 
-## Estrutura
-
-```text
-src/
-├── components/
-│   ├── layout/
-│   │   ├── AppShell/
-│   │   │   ├── AppShell.jsx
-│   │   │   └── AppShell.css
-│   │   ├── BottomNav/
-│   │   │   ├── BottomNav.jsx
-│   │   │   └── BottomNav.css
-│   │   └── TopBar/
-│   │       ├── TopBar.jsx
-│   │       └── TopBar.css
-│   └── ui/
-│       ├── FeatureCard/
-│       ├── PageHero/
-│       ├── SectionTitle/
-│       └── ToolCard/
-├── pages/
-│   ├── HomePage/
-│   ├── LearnPage/
-│   ├── PracticePage/
-│   ├── InstrumentsPage/
-│   ├── InstrumentDetailPage/
-│   ├── ToolsPage/
-│   ├── MetronomePage/
-│   ├── TunerPage/
-│   ├── CircleOfFifthsPage/
-│   └── DictionaryPage/
-├── data/
-└── styles/
-    └── global.css
-```
-
-## Executar
-
-```bash
+```powershell
+Remove-Item -Recurse -Force node_modules -ErrorAction SilentlyContinue
+Remove-Item -Force package-lock.json -ErrorAction SilentlyContinue
+npm cache verify
 npm install
-npm run dev
+npm start
 ```
 
-## CSS global
+O projeto abre em `http://localhost:3000`.
 
-`src/styles/global.css` contém apenas:
+## Build
 
-- reset
-- variáveis de tema
-- regras base do documento
+```powershell
+npm run build
+```
 
-Os estilos de componentes e páginas ficam junto de seus respectivos arquivos.
+A pasta gerada é `build/`.
+
+## Deploy
+
+```powershell
+npm run deploy
+```
+
+## Observação sobre ESLint/Jest
+
+A configuração `react-app/jest` foi removida porque o projeto não depende dela para execução e ela pode causar o erro `Environment key "jest/globals" is unknown` quando existe uma combinação incompatível de pacotes ESLint/Jest instalada.
