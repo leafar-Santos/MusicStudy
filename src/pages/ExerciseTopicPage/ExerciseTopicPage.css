@@ -1,1 +1,145 @@
-.exercise-topic-page{padding:30px 0 60px;max-width:900px;margin:auto}.exercise-topic-page>a:first-child{color:var(--text-soft);text-decoration:none;font-weight:700}.exercise-topic-page header{margin:22px 0;padding:30px;border-radius:24px;background:var(--surface);border:1px solid var(--border)}.exercise-topic-page header span{color:var(--primary);font-size:.76rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800}.exercise-topic-page h1{font-size:clamp(2rem,5vw,3.5rem);margin:8px 0}.exercise-topic-page header p{color:var(--text-soft)}.exercise-box,.exercise-result{padding:30px;border-radius:24px;border:1px solid var(--border);background:var(--surface)}.exercise-box__progress{color:var(--primary);font-weight:800;font-size:.8rem}.exercise-box__options{display:grid;gap:10px;margin:22px 0}.exercise-box__options button{padding:15px 16px;text-align:left;border:1px solid var(--border);border-radius:14px;background:var(--background);color:var(--text);cursor:pointer}.exercise-box__options button.correct{border-color:#28a86b;background:rgba(40,168,107,.12)}.exercise-box__options button.wrong{border-color:#d75555;background:rgba(215,85,85,.1)}.exercise-box__feedback{font-weight:700}.exercise-box__next,.exercise-result a{display:inline-flex;border:0;border-radius:12px;padding:12px 16px;background:var(--primary);color:#fff;text-decoration:none;font-weight:800;cursor:pointer}.exercise-result{text-align:center}.exercise-result>div{font-size:3rem}.exercise-result p{color:var(--text-soft)}
+﻿.exercise-topic-page {
+  padding: 30px 0 60px;
+  max-width: 900px;
+  margin: auto;
+  color: var(--color-text);
+}
+
+.exercise-topic-page > a:first-child,
+.exercise-box__next,
+.exercise-result a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 18px;
+  border: 1px solid var(--color-navy);
+  border-radius: 14px;
+  background: var(--color-gold-soft);
+  color: var(--color-navy);
+  text-decoration: none;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.exercise-topic-page > a:first-child:hover,
+.exercise-box__next:hover,
+.exercise-result a:hover {
+  background: var(--color-gold);
+}
+
+.exercise-topic-page header {
+  margin: 22px 0;
+  padding: 30px;
+  border-radius: 24px;
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+}
+
+.exercise-topic-page header span {
+  color: var(--color-navy);
+  font-size: .76rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-weight: 800;
+}
+
+.exercise-topic-page h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin: 8px 0;
+}
+
+.exercise-topic-page header p {
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.exercise-box,
+.exercise-result {
+  padding: 30px;
+  border-radius: 24px;
+  border: 1px solid var(--color-navy-light);
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+
+.exercise-box__progress {
+  margin-bottom: 12px;
+  color: var(--color-gold-soft);
+  font-weight: 800;
+  font-size: .8rem;
+}
+
+.exercise-box__options {
+  display: grid;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+.exercise-box__options button {
+  min-height: 44px;
+  padding: 15px 16px;
+  text-align: left;
+  border: 1px solid #8190ad;
+  border-radius: 14px;
+  background: var(--color-navy-light);
+  color: var(--color-white);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.exercise-box__options button:hover {
+  border-color: var(--color-gold-soft);
+}
+
+.exercise-box__options button.correct {
+  border-color: #58e39a;
+  background: #184b39;
+  color: var(--color-white);
+}
+
+.exercise-box__options button.wrong {
+  border-color: #ff9696;
+  background: #652c39;
+  color: var(--color-white);
+}
+
+.exercise-box__feedback {
+  margin-bottom: 16px;
+  color: var(--color-white);
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.exercise-result {
+  text-align: center;
+}
+
+.exercise-result > div {
+  font-size: 3rem;
+  color: var(--color-gold-soft);
+}
+
+.exercise-result p {
+  margin: 14px 0 22px;
+  color: var(--color-white);
+  line-height: 1.6;
+}
+
+.exercise-topic-page a:focus-visible,
+.exercise-topic-page button:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+.exercise-topic-page > a:first-child:focus-visible {
+  outline-color: var(--color-navy);
+}
+
+@media (max-width: 620px) {
+  .exercise-topic-page header,
+  .exercise-box,
+  .exercise-result {
+    padding: 22px 16px;
+  }
+}

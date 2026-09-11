@@ -14,6 +14,37 @@
   transform: translateY(-3px);
 }
 
+.tool-card:focus-visible {
+  outline: 3px solid var(--color-gold-soft);
+  outline-offset: 4px;
+}
+
+.tool-card--illustrated {
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  justify-content: flex-start;
+}
+
+.tool-card__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 5;
+  object-fit: contain;
+  background: #19233e;
+}
+
+.tool-card--illustrated .tool-card__content {
+  padding: 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tool-card {
+    transition: none;
+  }
+}
+
 .tool-card__icon {
   color: var(--color-gold-soft);
   font-size: 2rem;

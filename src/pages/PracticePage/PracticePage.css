@@ -16,6 +16,7 @@
   padding: 24px;
   border-radius: 24px;
   color: white;
+  text-decoration: none;
   background: #101a36;
 }
 
@@ -23,7 +24,7 @@
   position: absolute;
   top: 18px;
   right: 18px;
-  color: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.65);
   font-weight: 700;
 }
 
@@ -71,4 +72,20 @@
   }
 }
 
-.practice-card{text-decoration:none;color:inherit}.practice-card__level{display:block;color:var(--primary);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin:8px 0}.practice-card__action{display:inline-block;margin-top:auto;color:var(--primary);font-weight:800;font-size:.88rem}
+.practice-card__level {
+  display: block;
+  color: var(--color-gold-soft);
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin: 8px 0;
+}
+
+.practice-card__action {
+  display: inline-block;
+  margin-top: auto;
+  color: var(--color-gold-soft);
+  font-weight: 800;
+  font-size: .88rem;
+}

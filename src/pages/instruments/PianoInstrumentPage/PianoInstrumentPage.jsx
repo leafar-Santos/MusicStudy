@@ -266,6 +266,7 @@ export default function PianoInstrumentPage() {
                     className={`piano-key piano-key--white ${activeNote === note.note ? 'is-active' : ''}`}
                     onPointerDown={() => attack(note.note)}
                     onPointerUp={() => release(note.note)}
+                    onPointerCancel={() => release(note.note)}
                     onPointerLeave={() => release(note.note)}
                   >
                     <span>{note.note}</span>
@@ -285,6 +286,7 @@ export default function PianoInstrumentPage() {
                     style={{ left: `calc(10px + ${left})` }}
                     onPointerDown={() => attack(note.note)}
                     onPointerUp={() => release(note.note)}
+                    onPointerCancel={() => release(note.note)}
                     onPointerLeave={() => release(note.note)}
                   >
                     <span>{note.note.replace(/\d/, '')}</span>
