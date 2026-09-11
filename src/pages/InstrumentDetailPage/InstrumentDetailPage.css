@@ -4,12 +4,6 @@
   padding: 42px 0 100px;
 }
 
-.instrument-detail-page__back {
-  display: inline-block;
-  margin-bottom: 24px;
-  color: var(--color-muted);
-}
-
 .instrument-detail-hero {
   display: grid;
   grid-template-columns: 160px 1fr;

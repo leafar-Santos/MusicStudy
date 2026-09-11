@@ -2,14 +2,6 @@
   padding: 28px 0 52px;
 }
 
-.piano-instrument-page__back {
-  display: inline-flex;
-  margin-bottom: 20px;
-  color: var(--text-soft);
-  text-decoration: none;
-  font-weight: 700;
-}
-
 .piano-digital {
   --piano-bg: #0b1020;
   --piano-panel: #121a2f;
@@ -344,24 +336,7 @@
 /* =========================================================
    AJUSTES GLOBAIS DE NAVEGAÇÃO E MOBILE
    ========================================================= */
-.piano-instrument-page__back {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  margin: 0 0 18px;
-  padding: 10px 15px;
-  border: 1px solid color-mix(in srgb, var(--primary) 32%, var(--border));
-  border-radius: 12px;
-  background: linear-gradient(180deg, var(--surface), color-mix(in srgb, var(--surface) 92%, var(--primary) 8%));
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 800;
-  box-shadow: 0 6px 18px rgba(0,0,0,.08);
-  position: relative;
-  z-index: 10;
-  transition: transform .15s ease, border-color .15s ease;
-}
-.piano-instrument-page__back:hover { transform: translateY(-1px); border-color: var(--primary); }
+
 .piano-digital__footer,
 .piano-digital__footer div,
 .piano-digital__footer span,
@@ -373,18 +348,9 @@
   overflow-wrap: anywhere;
 }
 @media (max-width: 620px) {
-  .piano-instrument-page__back { margin-bottom: 12px; padding: 9px 12px; font-size: .82rem; }
+
   .piano-digital { overflow: visible !important; padding-bottom: 18px; }
   .piano-digital__footer { display: block; padding-bottom: 8px; line-height: 1.5; font-size: .72rem; }
-}
-.piano-instrument-page__back > span:first-child {
-  display: grid;
-  place-items: center;
-  width: 25px;
-  height: 25px;
-  border-radius: 8px;
-  background: var(--primary);
-  color: #fff;
 }
 
 /* =========================================================
@@ -458,7 +424,6 @@
   }
 }
 
-
 /* =========================================================
    PIANO — MOBILE LANDSCAPE / APP FIRST
    ========================================================= */
@@ -466,19 +431,6 @@
   .piano-instrument-page {
     padding: 8px 0 calc(24px + env(safe-area-inset-bottom, 0px));
     overflow-x: hidden;
-  }
-
-  .piano-instrument-page__back {
-    margin-bottom: 8px;
-    padding: 7px 10px;
-    border-radius: 10px;
-    font-size: .72rem;
-  }
-
-  .piano-instrument-page__back > span:first-child {
-    width: 20px;
-    height: 20px;
-    border-radius: 6px;
   }
 
   .piano-digital {

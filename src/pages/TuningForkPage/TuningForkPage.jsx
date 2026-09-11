@@ -1,3 +1,4 @@
+import BackButton from '../../components/ui/BackButton/BackButton'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './TuningForkPage.css'
@@ -54,7 +55,7 @@ export default function TuningForkPage() {
 
   return (
     <div className="tuning-fork-page">
-      <Link className="tuning-fork-back" to="/ferramentas">← Voltar às ferramentas</Link>
+      <BackButton to="/ferramentas">Voltar às ferramentas</BackButton>
       <header className="tuning-fork-hero">
         <span>REFERÊNCIA DE AFINAÇÃO</span>
         <h1>Diapasão</h1>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import BackButton from '../../../components/ui/BackButton/BackButton'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import './PianoInstrumentPage.css'
 
@@ -192,7 +192,7 @@ export default function PianoInstrumentPage() {
 
   return (
     <div className="piano-instrument-page">
-      <Link className="piano-instrument-page__back" to="/instrumentos"><span>←</span><span>Voltar aos instrumentos</span></Link>
+      <BackButton to="/instrumentos">Voltar aos instrumentos</BackButton>
 
       <div className="piano-digital">
         <div className="piano-digital__top">

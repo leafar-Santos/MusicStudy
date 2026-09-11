@@ -1,3 +1,4 @@
+import BackButton from '../../components/ui/BackButton/BackButton'
 import { useEffect, useRef, useState } from 'react'
 
 import './MetronomePage.css'
@@ -376,6 +377,7 @@ export default function MetronomePage() {
 
   return (
     <div className="metronome-page">
+      <BackButton to="/ferramentas">Voltar às ferramentas</BackButton>
       <header className="metronome-page__header">
         <div>
           <span className="metronome-page__eyebrow">

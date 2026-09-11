@@ -1,4 +1,5 @@
-import { Link, useParams } from 'react-router-dom'
+import BackButton from '../../components/ui/BackButton/BackButton'
+import { useParams } from 'react-router-dom'
 import { instruments } from '../../data/instruments'
 import SectionTitle from '../../components/ui/SectionTitle/SectionTitle'
 import './InstrumentDetailPage.css'
@@ -32,7 +33,7 @@ export default function InstrumentDetailPage() {
 
   return (
     <div className="instrument-detail-page">
-      <Link className="instrument-detail-page__back" to="/instrumentos">← Voltar aos instrumentos</Link>
+      <BackButton to="/instrumentos">Voltar aos instrumentos</BackButton>
 
       <section className="instrument-detail-hero">
         <div className="instrument-detail-hero__icon">{instrument.icon}</div>

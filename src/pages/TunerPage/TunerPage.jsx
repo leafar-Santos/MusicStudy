@@ -1,3 +1,4 @@
+import BackButton from '../../components/ui/BackButton/BackButton'
 import { useEffect, useRef, useState } from 'react'
 
 import './TunerPage.css'
@@ -631,6 +632,7 @@ export default function TunerPage() {
 
   return (
     <div className="tuner-page">
+      <BackButton to="/ferramentas">Voltar às ferramentas</BackButton>
       <header className="tuner-page__header">
         <div>
           <span className="tuner-page__eyebrow">

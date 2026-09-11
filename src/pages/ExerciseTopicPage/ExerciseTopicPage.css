@@ -5,7 +5,6 @@
   color: var(--color-text);
 }
 
-.exercise-topic-page > a:first-child,
 .exercise-box__next,
 .exercise-result a {
   display: inline-flex;
@@ -22,7 +21,6 @@
   cursor: pointer;
 }
 
-.exercise-topic-page > a:first-child:hover,
 .exercise-box__next:hover,
 .exercise-result a:hover {
   background: var(--color-gold);
@@ -130,10 +128,6 @@
 .exercise-topic-page button:focus-visible {
   outline: 3px solid var(--color-gold);
   outline-offset: 4px;
-}
-
-.exercise-topic-page > a:first-child:focus-visible {
-  outline-color: var(--color-navy);
 }
 
 @media (max-width: 620px) {

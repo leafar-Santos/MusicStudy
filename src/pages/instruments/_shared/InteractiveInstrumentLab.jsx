@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import BackButton from '../../../components/ui/BackButton/BackButton'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import './InteractiveInstrumentLab.css'
 
@@ -196,7 +196,7 @@ export default function InteractiveInstrumentLab({config}){
   function stop(){clearTimeout(timerRef.current);try{nodeRef.current?.stop?.()}catch{};setPlaying(null);setActivePad(null)}
 
   return <div className={`ii-page ii-page--${config.family}`}>
-    <Link className="ii-back" to="/instrumentos"><span>←</span><span>Voltar aos instrumentos</span></Link>
+    <BackButton to="/instrumentos">Voltar aos instrumentos</BackButton>
     <section className="ii-hero"><div className="ii-hero__icon">{config.icon}</div><div><span>{config.category}</span><h1>{config.name}</h1><p>{config.description}</p></div></section>
     <section className="ii-lab">
       <div className="ii-lab__top"><div><span>Music Lab</span><h2>{config.labTitle || `${config.name} interativo`}</h2><p>{config.labDescription}</p></div><div className={`ii-status ${ready?'is-ready':''}`}>{ready?`● ${config.name} pronto`:status}</div></div>

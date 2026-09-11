@@ -1,0 +1,46 @@
+.back-navigation {
+  margin: 0 0 20px;
+}
+
+.back-navigation .back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 11px 16px;
+  border: 1px solid #cbd0d5;
+  border-radius: 12px;
+  background: #f3f4f5;
+  color: #343a40;
+  font: 600 14px/1.4 Inter, system-ui, sans-serif;
+  text-align: left;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgb(25 30 35 / 5%);
+  transition: background-color .15s ease, border-color .15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.back-button svg {
+  flex: 0 0 20px;
+}
+
+.back-navigation .back-button:hover {
+  background: #e5e8eb;
+  border-color: #9ba3ab;
+}
+
+.back-navigation .back-button:active {
+  background: #d7dce1;
+  border-color: #7b858e;
+}
+
+.back-navigation .back-button:focus-visible {
+  outline: 3px solid #59636e;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-navigation .back-button { transition: none; }
+}

@@ -1,3 +1,4 @@
+import BackButton from '../../components/ui/BackButton/BackButton'
 import { Link, useParams } from 'react-router-dom'
 import { theoryTopics } from '../../data/theory'
 import './TheoryTopicPage.css'
@@ -26,7 +27,7 @@ export default function TheoryTopicPage(){
  if(!topic)return <div className="theory-topic-page">Tema não encontrado.</div>
  const [body,practice]=content[slug]||[topic.description,'Revise o conceito e aplique em uma pequena leitura.']
  return <div className="theory-topic-page">
-  <Link to="/aprender">← Voltar para Aprender</Link>
+  <BackButton to="/aprender">Voltar para Aprender</BackButton>
   <header><span>{topic.level} • Módulo {topic.order}</span><div>{topic.symbol}</div><h1>{topic.title}</h1><p>{topic.description}</p></header>
   <article><h2>Conceito</h2><p>{body}</p><h2>Como estudar</h2><p>{practice}</p><div className="theory-topic-page__tip"><strong>Objetivo do módulo</strong><p>Compreender o assunto, reconhecê-lo visualmente e aplicá-lo antes de avançar.</p></div></article>
   <Link className="theory-topic-page__exercise" to={`/praticar/${slug}`}>Ir para os exercícios →</Link>

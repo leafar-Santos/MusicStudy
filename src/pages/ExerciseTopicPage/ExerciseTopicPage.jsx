@@ -1,3 +1,4 @@
+import BackButton from '../../components/ui/BackButton/BackButton'
 import { Link, useParams } from 'react-router-dom'
 import { useMemo, useState } from 'react'
 import { theoryTopics } from '../../data/theory'
@@ -21,7 +22,7 @@ export default function ExerciseTopicPage(){
  function choose(option){if(answer)return;setAnswer(option);if(option===q[1])setScore(s=>s+1)}
  function next(){if(index===questions.length-1){setDone(true)}else{setIndex(i=>i+1);setAnswer('')}}
  return <div className="exercise-topic-page">
-  <Link to="/praticar">← Voltar aos exercícios</Link>
+  <BackButton to="/praticar">Voltar aos exercícios</BackButton>
   <header><span>Módulo {topic.order} • {topic.level}</span><h1>{topic.title}</h1><p>Exercícios específicos para fixar o conteúdo estudado.</p></header>
   {!done?<section className="exercise-box"><div className="exercise-box__progress">Questão {index+1} de {questions.length}</div><h2>{q[0]}</h2><div className="exercise-box__options">{q[2].map(o=><button className={answer?(o===q[1]?'correct':o===answer?'wrong':''):''} onClick={()=>choose(o)} key={o}>{o}</button>)}</div>{answer&&<><p className="exercise-box__feedback">{answer===q[1]?'Correto.':'Revise este ponto e tente novamente depois.'}</p><button className="exercise-box__next" onClick={next}>{index===questions.length-1?'Ver resultado':'Próxima questão →'}</button></>}</section>:
   <section className="exercise-result"><div>✓</div><h2>Exercício concluído</h2><p>Você acertou <strong>{score} de {questions.length}</strong>.</p><Link to={`/aprender/${slug}`}>Revisar teoria</Link></section>}

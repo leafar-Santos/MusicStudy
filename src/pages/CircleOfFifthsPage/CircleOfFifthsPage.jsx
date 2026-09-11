@@ -1,3 +1,4 @@
+import BackButton from '../../components/ui/BackButton/BackButton'
 import { useState } from 'react'
 
 import './CircleOfFifthsPage.css'
@@ -278,6 +279,7 @@ export default function CircleOfFifthsPage() {
 
   return (
     <div className="circle-page">
+      <BackButton to="/ferramentas">Voltar às ferramentas</BackButton>
       <header className="circle-page__header">
         <div>
           <span className="circle-page__eyebrow">
