@@ -1,0 +1,977 @@
+.dictionary-page {
+  width: min(
+    var(--content-width),
+    94vw
+  );
+
+  margin: 0 auto;
+
+  padding: 52px 0 110px;
+}
+
+/* HEADER */
+
+.dictionary-header {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 36px;
+}
+
+.dictionary-header__eyebrow {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--color-gold);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.18em;
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+}
+
+.dictionary-header h1 {
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: clamp(
+    3rem,
+    6vw,
+    5.5rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.04em;
+}
+
+.dictionary-header p {
+  max-width: 680px;
+
+  margin-top: 15px;
+
+  color: var(--color-muted);
+
+  line-height: 1.65;
+}
+
+/* CONTADOR */
+
+.dictionary-header__counter {
+  min-width: 135px;
+
+  padding: 16px 19px;
+
+  border: 1px solid
+    var(--color-line);
+
+  border-radius: 18px;
+
+  text-align: center;
+
+  background:
+    var(--color-paper);
+}
+
+.dictionary-header__counter strong {
+  display: block;
+
+  color:
+    var(--color-navy);
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 1.8rem;
+
+  line-height: 1;
+}
+
+.dictionary-header__counter span {
+  display: block;
+
+  margin-top: 6px;
+
+  color:
+    var(--color-muted);
+
+  font-size: 0.65rem;
+}
+
+/* SEARCH PANEL */
+
+.dictionary-search-panel {
+  padding: 25px;
+
+  border-radius: 26px;
+
+  color: white;
+
+  background:
+    radial-gradient(
+      circle at 15% 0%,
+      rgba(
+        215,
+        173,
+        98,
+        0.15
+      ),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #121b38,
+      #090f20
+    );
+
+  box-shadow:
+    0 20px 55px
+      rgba(
+        11,
+        16,
+        32,
+        0.18
+      );
+}
+
+/* SEARCH */
+
+.dictionary-search {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.dictionary-search__icon {
+  position: absolute;
+
+  left: 18px;
+
+  z-index: 2;
+
+  color:
+    var(--color-gold);
+
+  font-size: 1.4rem;
+}
+
+.dictionary-search input {
+  width: 100%;
+
+  min-height: 64px;
+
+  padding:
+    0 55px
+    0 52px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.1
+    );
+
+  border-radius: 17px;
+
+  outline: none;
+
+  color: white;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+
+  font-size: 0.95rem;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.dictionary-search input::placeholder {
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.38
+    );
+}
+
+.dictionary-search input:focus {
+  border-color:
+    rgba(
+      215,
+      173,
+      98,
+      0.7
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.09
+    );
+}
+
+.dictionary-search__clear {
+  width: 34px;
+
+  height: 34px;
+
+  position: absolute;
+
+  right: 15px;
+
+  display: grid;
+
+  place-items: center;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  color: white;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.09
+    );
+
+  font-size: 1.2rem;
+}
+
+/* INFO SEARCH */
+
+.dictionary-search-panel__info {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-top: 12px;
+
+  padding: 0 3px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.43
+    );
+
+  font-size: 0.67rem;
+}
+
+.dictionary-search-panel__info strong {
+  color:
+    var(--color-gold-soft);
+}
+
+/* CATEGORIAS */
+
+.dictionary-categories {
+  display: grid;
+
+  grid-template-columns:
+    repeat(7, 1fr);
+
+  gap: 8px;
+
+  margin-top: 18px;
+}
+
+.dictionary-categories button {
+  min-width: 0;
+
+  min-height: 79px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding: 10px 5px;
+
+  border:
+    1px solid
+    var(--color-line);
+
+  border-radius: 16px;
+
+  color:
+    var(--color-muted);
+
+  background:
+    var(--color-paper);
+
+  font-size: 0.68rem;
+
+  font-weight: 700;
+
+  transition:
+    0.18s ease;
+}
+
+.dictionary-categories button:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    rgba(
+      215,
+      173,
+      98,
+      0.6
+    );
+}
+
+.dictionary-categories button.selected {
+  border-color:
+    var(--color-navy);
+
+  color: white;
+
+  background:
+    var(--color-navy);
+
+  box-shadow:
+    0 10px 25px
+      rgba(
+        17,
+        26,
+        57,
+        0.15
+      );
+}
+
+.dictionary-categories__icon {
+  height: 22px;
+
+  color:
+    var(--color-gold);
+
+  font-family: Georgia, serif;
+
+  font-size: 1.15rem;
+}
+
+.dictionary-categories small {
+  opacity: 0.55;
+
+  font-size: 0.58rem;
+}
+
+/* HEADER RESULTADOS */
+
+.dictionary-results-header {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin:
+    40px 0
+    17px;
+}
+
+.dictionary-results-header
+  > div
+  > span {
+  color:
+    var(--color-gold);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.14em;
+
+  font-size: 0.63rem;
+
+  font-weight: 700;
+}
+
+.dictionary-results-header h2 {
+  margin-top: 4px;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 2rem;
+
+  font-weight: 500;
+}
+
+.dictionary-results-header
+  > button {
+  padding: 9px 13px;
+
+  border:
+    1px solid
+    var(--color-line);
+
+  border-radius: 999px;
+
+  color:
+    var(--color-muted);
+
+  background: white;
+
+  font-size: 0.67rem;
+
+  font-weight: 700;
+}
+
+/* LISTA */
+
+.dictionary-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  align-items: start;
+
+  gap: 13px;
+}
+
+/* CARD */
+
+.dictionary-card {
+  overflow: hidden;
+
+  padding: 22px;
+
+  border:
+    1px solid
+    var(--color-line);
+
+  border-radius: 22px;
+
+  background:
+    var(--color-paper);
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.dictionary-card:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    rgba(
+      215,
+      173,
+      98,
+      0.55
+    );
+
+  box-shadow:
+    0 15px 35px
+      rgba(
+        20,
+        25,
+        45,
+        0.06
+      );
+}
+
+.dictionary-card--expanded {
+  border-color:
+    rgba(
+      215,
+      173,
+      98,
+      0.6
+    );
+}
+
+/* CARD TOP */
+
+.dictionary-card__top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  min-height: 26px;
+
+  gap: 15px;
+
+  margin-bottom: 13px;
+}
+
+.dictionary-card__category {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 6px 9px;
+
+  border-radius: 999px;
+
+  color:
+    var(--color-navy);
+
+  background:
+    var(--color-cream);
+
+  font-size: 0.6rem;
+
+  font-weight: 700;
+}
+
+.dictionary-card__abbreviation {
+  color:
+    var(--color-gold);
+
+  font-family: Georgia, serif;
+
+  font-size: 0.75rem;
+
+  font-style: italic;
+
+  font-weight: 700;
+}
+
+/* CONTEÚDO */
+
+.dictionary-card__content {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  gap: 25px;
+}
+
+.dictionary-card__content
+  > div:first-child {
+  flex: 1;
+}
+
+.dictionary-card h3 {
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 1.65rem;
+
+  font-style: italic;
+
+  font-weight: 500;
+
+  color:
+    var(--color-navy);
+}
+
+.dictionary-card p {
+  margin-top: 8px;
+
+  color:
+    var(--color-muted);
+
+  line-height: 1.55;
+
+  font-size: 0.83rem;
+}
+
+/* METADATA */
+
+.dictionary-card__metadata {
+  min-width: 86px;
+
+  display: grid;
+
+  align-content: start;
+
+  gap: 7px;
+}
+
+.dictionary-card__metadata
+  > div {
+  padding: 8px 10px;
+
+  border-radius: 11px;
+
+  text-align: center;
+
+  background: #f8f5ee;
+}
+
+.dictionary-card__metadata span {
+  display: block;
+
+  color:
+    var(--color-muted);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+
+  font-size: 0.5rem;
+}
+
+.dictionary-card__metadata strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color:
+    var(--color-navy);
+
+  font-size: 0.73rem;
+}
+
+.dictionary-card__metadata
+  .dictionary-card__symbol {
+  font-family: Georgia, serif;
+
+  font-size: 1.2rem;
+}
+
+/* MAIS */
+
+.dictionary-card__more {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 17px;
+
+  padding:
+    11px 0 0;
+
+  border: 0;
+
+  border-top:
+    1px solid
+    var(--color-line);
+
+  color:
+    var(--color-navy);
+
+  background:
+    transparent;
+
+  text-align: left;
+
+  font-size: 0.65rem;
+
+  font-weight: 700;
+}
+
+.dictionary-card__details {
+  margin-top: 13px;
+
+  padding: 14px;
+
+  border-radius: 13px;
+
+  background:
+    var(--color-cream);
+}
+
+.dictionary-card__details span {
+  display: block;
+
+  color:
+    var(--color-gold);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.11em;
+
+  font-size: 0.55rem;
+
+  font-weight: 800;
+}
+
+.dictionary-card__details p {
+  margin-top: 6px;
+
+  font-size: 0.75rem;
+}
+
+/* EMPTY */
+
+.dictionary-empty {
+  padding: 70px 20px;
+
+  border:
+    1px dashed
+    var(--color-line);
+
+  border-radius: 25px;
+
+  text-align: center;
+
+  background:
+    var(--color-paper);
+}
+
+.dictionary-empty__icon {
+  color:
+    var(--color-gold);
+
+  font-family: Georgia, serif;
+
+  font-size: 3rem;
+}
+
+.dictionary-empty h2 {
+  margin-top: 10px;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 1.8rem;
+
+  font-weight: 500;
+}
+
+.dictionary-empty p {
+  margin-top: 7px;
+
+  color:
+    var(--color-muted);
+
+  font-size: 0.8rem;
+}
+
+.dictionary-empty button {
+  margin-top: 18px;
+
+  padding: 11px 17px;
+
+  border: 0;
+
+  border-radius: 999px;
+
+  color: #21180d;
+
+  background:
+    var(--color-gold);
+
+  font-weight: 700;
+}
+
+/* TIP */
+
+.dictionary-tip {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  margin-top: 28px;
+
+  padding: 21px 24px;
+
+  border-radius: 22px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #151f42,
+      #0c1329
+    );
+}
+
+.dictionary-tip__symbol {
+  width: 52px;
+
+  height: 52px;
+
+  flex: 0 0 auto;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 15px;
+
+  color:
+    var(--color-gold-soft);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+
+  font-family: Georgia, serif;
+
+  font-size: 1.6rem;
+}
+
+.dictionary-tip strong {
+  font-size: 0.82rem;
+}
+
+.dictionary-tip p {
+  max-width: 700px;
+
+  margin-top: 4px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.55
+    );
+
+  font-size: 0.71rem;
+
+  line-height: 1.5;
+}
+
+/* RESPONSIVO */
+
+@media (
+  max-width: 1050px
+) {
+  .dictionary-categories {
+    grid-template-columns:
+      repeat(4, 1fr);
+  }
+}
+
+@media (
+  max-width: 920px
+) {
+  .dictionary-page {
+    width: auto;
+
+    padding:
+      38px 16px
+      115px;
+  }
+
+  .dictionary-header {
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    gap: 18px;
+  }
+
+  .dictionary-header__counter {
+    text-align: left;
+  }
+}
+
+@media (
+  max-width: 700px
+) {
+  .dictionary-list {
+    grid-template-columns:
+      1fr;
+  }
+
+  .dictionary-categories {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+  .dictionary-search-panel__info {
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    gap: 4px;
+  }
+}
+
+@media (
+  max-width: 470px
+) {
+  .dictionary-categories {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .dictionary-card__content {
+    flex-direction:
+      column;
+
+    gap: 12px;
+  }
+
+  .dictionary-card__metadata {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .dictionary-results-header {
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+  }
+}
