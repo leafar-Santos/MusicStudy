@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300">
+<defs><radialGradient id="bg"><stop stop-color="#303d5b"/><stop offset="1" stop-color="#18223b"/></radialGradient><linearGradient id="gold" x2="1" y2="1"><stop stop-color="#f3d899"/><stop offset="1" stop-color="#a87b3c"/></linearGradient></defs>
+<path fill="url(#bg)" d="M0 0h480v300H0z"/>
+<ellipse cx="240" cy="268" rx="145" ry="12" fill="#0b1327" opacity=".35"/>
+<rect x="80" y="39" width="320" height="218" rx="24" fill="#0e172a" stroke="#47536b" stroke-width="2"/>
+<path d="M118 135a127 127 0 0 1 244 0" fill="none" stroke="#35425e" stroke-width="12" stroke-linecap="round"/>
+<path d="M220 50a127 127 0 0 1 40 0" fill="none" stroke="#76d4b2" stroke-width="12"/>
+<g stroke="#9aa6bd" stroke-width="2"><path d="M128 120l12 5m17-42 9 10m31-30 4 13m151 44-12 5m-17-42-9 10m-31-30-4 13"/></g>
+<path d="M240 122V65" stroke="#76d4b2" stroke-width="4" stroke-linecap="round"/><circle cx="240" cy="122" r="6" fill="#76d4b2"/>
+<g font-family="Arial,sans-serif" text-anchor="middle"><text x="240" y="193" fill="#f8f3e8" font-size="62" font-weight="bold">A<tspan font-size="24">4</tspan></text><text x="240" y="226" fill="#76d4b2" font-size="17" letter-spacing="2">440 Hz</text><text x="117" y="159" fill="#9aa6bd" font-size="19">&#8722;</text><text x="363" y="159" fill="#9aa6bd" font-size="19">+</text></g>
+</svg>
