@@ -5,6 +5,7 @@ import LearnPage from './pages/LearnPage/LearnPage'
 import PracticePage from './pages/PracticePage/PracticePage'
 import InstrumentsPage from './pages/InstrumentsPage/InstrumentsPage'
 import ToolsPage from './pages/ToolsPage/ToolsPage'
+import TuningForkPage from './pages/TuningForkPage/TuningForkPage'
 import MetronomePage from './pages/MetronomePage/MetronomePage'
 import TunerPage from './pages/TunerPage/TunerPage'
 import CircleOfFifthsPage from './pages/CircleOfFifthsPage/CircleOfFifthsPage'
@@ -48,6 +49,7 @@ export default function App() {
         <Route path="/instrumentos/tuba" element={<TubaInstrumentPage />} />
         <Route path="/instrumentos/percussao" element={<PercussaoInstrumentPage />} />
     <Route path="/ferramentas" element={<ToolsPage />} />
+    <Route path="/ferramentas/diapasao" element={<TuningForkPage />} />
     <Route path="/ferramentas/metronomo" element={<MetronomePage />} />
     <Route path="/ferramentas/afinador" element={<TunerPage />} />
     <Route path="/ferramentas/circulo-quintas" element={<CircleOfFifthsPage />} />
