@@ -1,0 +1,19 @@
+MusicStudy - scale instrument samples
+
+Source and MP3 rendering: Benjamin Gleitzman / MIDI.js Soundfonts contributors
+https://github.com/gleitz/midi-js-soundfonts
+
+Clarinete: FluidR3_GM
+https://gleitz.github.io/midi-js-soundfonts/FluidR3_GM/clarinet-mp3.js
+License: Creative Commons Attribution 3.0 US
+https://creativecommons.org/licenses/by/3.0/us/
+
+Violino and Sax alto: Musyng Kite
+https://gleitz.github.io/midi-js-soundfonts/MusyngKite/violin-mp3.js
+https://gleitz.github.io/midi-js-soundfonts/MusyngKite/alto_sax-mp3.js
+License: Creative Commons Attribution-ShareAlike 3.0
+https://creativecommons.org/licenses/by-sa/3.0/
+
+The MP3 bytes are unchanged. Notes C4 through B5 were extracted from the
+base64 soundfont collections and renamed to their concert-pitch MIDI numbers
+(60-83). These samples retain their respective licenses above.
