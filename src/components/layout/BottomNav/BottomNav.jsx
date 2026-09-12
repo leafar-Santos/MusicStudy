@@ -6,7 +6,7 @@ const items = [
   ['𝄞', 'Aprender', '/aprender'],
   ['♩', 'Praticar', '/praticar'],
   ['♪', 'Instrumentos', '/instrumentos'],
-  ['⚙', 'Ferramentas', '/ferramentas'],
+  ['𝄞', 'Escalas', '/escalas'],
 ]
 
 export default function BottomNav() {

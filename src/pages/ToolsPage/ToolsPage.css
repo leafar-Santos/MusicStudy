@@ -4,25 +4,10 @@
   padding: 60px 0 100px;
 }
 
-@media (max-width: 480px) {
-  .tools-page .tools-page__grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.tools-page__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-}
-
 @media (max-width: 920px) {
   .tools-page {
     width: auto;
     padding: 42px 16px 105px;
   }
 
-  .tools-page__grid {
-    grid-template-columns: 1fr 1fr;
-  }
 }

@@ -14,7 +14,7 @@ export default function TopBar() {
         <NavLink to="/aprender">Aprender</NavLink>
         <NavLink to="/praticar">Praticar</NavLink>
         <NavLink to="/instrumentos">Instrumentos</NavLink>
-        <NavLink to="/ferramentas">Ferramentas</NavLink>
+        <NavLink to="/escalas">Escalas</NavLink>
         <NavLink to="/dicionario">Dicionário</NavLink>
       </nav>
     </header>

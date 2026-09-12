@@ -5,6 +5,8 @@ import LearnPage from './pages/LearnPage/LearnPage'
 import PracticePage from './pages/PracticePage/PracticePage'
 import InstrumentsPage from './pages/InstrumentsPage/InstrumentsPage'
 import ToolsPage from './pages/ToolsPage/ToolsPage'
+import ScalesPage from './pages/ScalesPage/ScalesPage'
+import ScaleDetailPage from './pages/ScalesPage/ScaleDetailPage'
 import TuningForkPage from './pages/TuningForkPage/TuningForkPage'
 import MetronomePage from './pages/MetronomePage/MetronomePage'
 import TunerPage from './pages/TunerPage/TunerPage'
@@ -29,6 +31,8 @@ import PercussaoInstrumentPage from './pages/instruments/PercussaoInstrumentPage
 export default function App() {
   return <Routes><Route element={<AppShell />}>
     <Route path="/" element={<HomePage />} />
+    <Route path="/escalas" element={<ScalesPage />} />
+    <Route path="/escalas/:slug" element={<ScaleDetailPage />} />
     <Route path="/aprender" element={<LearnPage />} />
     <Route path="/aprender/:slug" element={<TheoryTopicPage />} />
     <Route path="/praticar" element={<PracticePage />} />

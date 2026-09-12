@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import FeatureCard from '../../components/ui/FeatureCard/FeatureCard'
 import SectionTitle from '../../components/ui/SectionTitle/SectionTitle'
-import ToolCard from '../../components/ui/ToolCard/ToolCard'
+import ToolsGrid from '../../components/ui/ToolsGrid/ToolsGrid'
 import './HomePage.css'
 
 export default function HomePage() {
@@ -30,12 +30,7 @@ export default function HomePage() {
 
         <section className="home-tools">
           <SectionTitle title="Ferramentas" />
-          <div className="home-tools__grid">
-            <ToolCard icon="♩" title="Metrônomo" description="BPM e compasso" to="/ferramentas/metronomo" />
-            <ToolCard icon="≈" title="Afinador" description="Use o microfone" to="/ferramentas/afinador" />
-            <ToolCard icon="♫" title="Notas" description="Referências sonoras" to="/instrumentos" />
-            <ToolCard icon="○" title="Círculo das quintas" description="Tons e relativos" to="/ferramentas/circulo-quintas" />
-          </div>
+          <ToolsGrid />
         </section>
       </div>
     </>
